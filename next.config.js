@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
+  devIndicators: {
+    autoPrerender: false,
+  },
 	reactStrictMode: true,
 	env: {
 		REACT_APP_API_URL: process.env.REACT_APP_API_URL,
