@@ -203,9 +203,6 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 		setCommentInquiry({ ...commentInquiry });
 	};
 
-	if (device === 'mobile') {
-		return <div>PROPERTY DETAIL PAGE</div>;
-	} else {
 		return (
 			<div id={'property-detail-page'}>
 				<div className={'container'}>
@@ -653,8 +650,7 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 				</div>
 			</div>
 		);
-	}
-};
+	};
 
 PropertyDetail.defaultProps = {
 	initialComment: {

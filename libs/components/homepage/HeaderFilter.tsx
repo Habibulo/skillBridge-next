@@ -314,9 +314,6 @@ const HeaderFilter = (props: HeaderFilterProps) => {
 		}
 	};
 
-	if (device === 'mobile') {
-		return <div>HEADER FILTER MOBILE</div>;
-	} else {
 		return (
 			<>
 				<Stack className={'search-box'}>
@@ -559,8 +556,7 @@ const HeaderFilter = (props: HeaderFilterProps) => {
 				</Modal>
 			</>
 		);
-	}
-};
+	};
 
 HeaderFilter.defaultProps = {
 	initialInput: {

@@ -39,34 +39,6 @@ const TopAgents = (props: TopAgentsProps) => {
 	});
 	/** HANDLERS **/
 
-	if (device === 'mobile') {
-		return (
-			<Stack className={'top-agents'}>
-				<Stack className={'container'}>
-					<Stack className={'info-box'}>
-						<span>Top Agents</span>
-					</Stack>
-					<Stack className={'wrapper'}>
-						<Swiper
-							className={'top-agents-swiper'}
-							slidesPerView={'auto'}
-							centeredSlides={true}
-							spaceBetween={29}
-							modules={[Autoplay]}
-						>
-							{topAgents.map((agent: Member) => {
-								return (
-									<SwiperSlide className={'top-agents-slide'} key={agent?._id}>
-										<TopAgentCard agent={agent} key={agent?.memberNick} />
-									</SwiperSlide>
-								);
-							})}
-						</Swiper>
-					</Stack>
-				</Stack>
-			</Stack>
-		);
-	} else {
 		return (
 			<Stack className={'top-agents'}>
 				<Stack className={'container'}>
@@ -113,8 +85,7 @@ const TopAgents = (props: TopAgentsProps) => {
 				</Stack>
 			</Stack>
 		);
-	}
-};
+	};
 
 TopAgents.defaultProps = {
 	initialInput: {

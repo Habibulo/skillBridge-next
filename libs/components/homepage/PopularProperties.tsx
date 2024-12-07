@@ -40,34 +40,6 @@ const PopularProperties = (props: PopularPropertiesProps) => {
 
 	if (!popularProperties) return null;
 
-	if (device === 'mobile') {
-		return (
-			<Stack className={'popular-properties'}>
-				<Stack className={'container'}>
-					<Stack className={'info-box'}>
-						<span>Popular properties</span>
-					</Stack>
-					<Stack className={'card-box'}>
-						<Swiper
-							className={'popular-property-swiper'}
-							slidesPerView={'auto'}
-							centeredSlides={true}
-							spaceBetween={25}
-							modules={[Autoplay]}
-						>
-							{popularProperties.map((property: Property) => {
-								return (
-									<SwiperSlide key={property._id} className={'popular-property-slide'}>
-										<PopularPropertyCard property={property} />
-									</SwiperSlide>
-								);
-							})}
-						</Swiper>
-					</Stack>
-				</Stack>
-			</Stack>
-		);
-	} else {
 		return (
 			<Stack className={'popular-properties'}>
 				<Stack className={'container'}>
@@ -116,8 +88,7 @@ const PopularProperties = (props: PopularPropertiesProps) => {
 				</Stack>
 			</Stack>
 		);
-	}
-};
+	};
 
 PopularProperties.defaultProps = {
 	initialInput: {

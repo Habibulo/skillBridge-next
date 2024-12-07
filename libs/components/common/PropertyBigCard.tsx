@@ -27,10 +27,7 @@ const PropertyBigCard = (props: PropertyBigCardProps) => {
 		router.push(`/property/detail?id=${propertyId}`);
 	};
 
-	if (device === 'mobile') {
-		return <div>APARTMEND BIG CARD</div>;
-	} else {
-		return (
+	return (
 			<Stack className="property-big-card-box" onClick={() => goPropertyDetatilPage(property?._id)}>
 				<Box
 					component={'div'}
@@ -76,7 +73,7 @@ const PropertyBigCard = (props: PropertyBigCardProps) => {
 							<Typography className="view-cnt">{property?.propertyViews}</Typography>
 							<IconButton
 								color={'default'}
-								onClick={(e) => {
+								onClick={(e: any) => {
 									e.stopPropagation();
 									likePropertyHandler(user, property?._id);
 								}}
@@ -93,7 +90,6 @@ const PropertyBigCard = (props: PropertyBigCardProps) => {
 				</Box>
 			</Stack>
 		);
-	}
-};
+	};
 
 export default PropertyBigCard;

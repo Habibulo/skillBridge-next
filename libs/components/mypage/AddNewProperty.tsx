@@ -178,9 +178,6 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 
 	console.log('+insertPropertyData', insertPropertyData);
 
-	if (device === 'mobile') {
-		return <div>ADD NEW PROPERTY MOBILE PAGE</div>;
-	} else {
 		return (
 			<div id="add-property-page">
 				<Stack className="main-title-box">
@@ -510,8 +507,7 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 				</div>
 			</div>
 		);
-	}
-};
+	};
 
 AddProperty.defaultProps = {
 	initialValues: {

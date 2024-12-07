@@ -40,9 +40,6 @@ const eventsData: EventData[] = [
 const EventCard = ({ event }: { event: EventData }) => {
 	const device = useDeviceDetect();
 
-	if (device === 'mobile') {
-		return <div>EVENT CARD</div>;
-	} else {
 		return (
 			<Stack
 				className="event-card"
@@ -62,15 +59,11 @@ const EventCard = ({ event }: { event: EventData }) => {
 				</Box>
 			</Stack>
 		);
-	}
-};
+	};
 
 const Events = () => {
 	const device = useDeviceDetect();
 
-	if (device === 'mobile') {
-		return <div>EVENT CARD</div>;
-	} else {
 		return (
 			<Stack className={'events'}>
 				<Stack className={'container'}>
@@ -88,7 +81,6 @@ const Events = () => {
 				</Stack>
 			</Stack>
 		);
-	}
-};
+	};
 
 export default Events;

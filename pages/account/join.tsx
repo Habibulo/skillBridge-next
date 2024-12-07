@@ -62,10 +62,6 @@ const Join: NextPage = () => {
 	}, [input]);
 
 	console.log('+input: ', input);
-
-	if (device === 'mobile') {
-		return <div>LOGIN MOBILE</div>;
-	} else {
 		return (
 			<Stack className={'join-page'}>
 				<Stack className={'container'}>
@@ -211,7 +207,6 @@ const Join: NextPage = () => {
 				</Stack>
 			</Stack>
 		);
-	}
-};
+	};
 
 export default withLayoutBasic(Join);

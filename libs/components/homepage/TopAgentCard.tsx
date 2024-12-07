@@ -17,7 +17,6 @@ const TopAgentCard = (props: TopAgentProps) => {
 
 	/** HANDLERS **/
 
-	if (device === 'mobile') {
 		return (
 			<Stack className="top-agent-card">
 				<img src={agentImage} alt="" />
@@ -26,16 +25,6 @@ const TopAgentCard = (props: TopAgentProps) => {
 				<span>{agent?.memberType}</span>
 			</Stack>
 		);
-	} else {
-		return (
-			<Stack className="top-agent-card">
-				<img src={agentImage} alt="" />
-
-				<strong>{agent?.memberNick}</strong>
-				<span>{agent?.memberType}</span>
-			</Stack>
-		);
-	}
-};
+	};
 
 export default TopAgentCard;

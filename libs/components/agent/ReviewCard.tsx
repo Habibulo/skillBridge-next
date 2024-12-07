@@ -15,10 +15,6 @@ const ReviewCard = (props: ReviewCardProps) => {
 	const imagePath: string = comment?.memberData?.memberImage
 		? `${REACT_APP_API_URL}/${comment?.memberData?.memberImage}`
 		: '/img/profile/defaultUser.svg';
-
-	if (device === 'mobile') {
-		return <div>REVIEW CARD</div>;
-	} else {
 		return (
 			<Box component={'div'} className={'review-card'}>
 				<div className={'info'}>
@@ -53,7 +49,6 @@ const ReviewCard = (props: ReviewCardProps) => {
 				)}
 			</Box>
 		);
-	}
-};
+	};
 
 export default ReviewCard;

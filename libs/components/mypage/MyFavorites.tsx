@@ -58,9 +58,6 @@ const MyFavorites: NextPage = () => {
 			sweetMixinErrorAlert(err.message).then();
 		}
 	};
-	if (device === 'mobile') {
-		return <div>NESTAR MY FAVORITES MOBILE</div>;
-	} else {
 		return (
 			<div id="my-favorites-page">
 				<Stack className="main-title-box">
@@ -101,7 +98,6 @@ const MyFavorites: NextPage = () => {
 				) : null}
 			</div>
 		);
-	}
-};
+	};
 
 export default MyFavorites;

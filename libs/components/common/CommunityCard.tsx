@@ -43,11 +43,7 @@ const CommunityCard = (props: CommunityCardProps) => {
 		if (id === user?._id) router.push('/mypage');
 		else router.push(`/member?memberId=${id}`);
 	};
-
-	if (device === 'mobile') {
-		return <div>COMMUNITY CARD MOBILE</div>;
-	} else {
-		return (
+return (
 			<Stack
 				sx={{ width: size === 'small' ? '285px' : '317px' }}
 				className="community-general-card-config"
@@ -94,7 +90,6 @@ const CommunityCard = (props: CommunityCardProps) => {
 				</Stack>
 			</Stack>
 		);
-	}
-};
+	};
 
 export default CommunityCard;

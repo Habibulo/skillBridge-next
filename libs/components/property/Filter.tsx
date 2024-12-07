@@ -525,9 +525,6 @@ const Filter = (props: FilterType) => {
 		}
 	};
 
-	if (device === 'mobile') {
-		return <div>PROPERTIES FILTER</div>;
-	} else {
 		return (
 			<Stack className={'filter-main'}>
 				<Stack className={'find-your-home'} mb={'40px'}>
@@ -859,7 +856,6 @@ const Filter = (props: FilterType) => {
 				</Stack>
 			</Stack>
 		);
-	}
-};
+	};
 
 export default Filter;

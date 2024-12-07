@@ -57,9 +57,7 @@ const MemberPage: NextPage = () => {
 		}
 	};
 
-	if (device === 'mobile') {
-		return <>MEMBER PAGE MOBILE</>;
-	} else {
+
 		return (
 			<div id="member-page" style={{ position: 'relative' }}>
 				<div className="container">
@@ -93,7 +91,6 @@ const MemberPage: NextPage = () => {
 				</div>
 			</div>
 		);
-	}
-};
+	};
 
 export default withLayoutBasic(MemberPage);

@@ -235,9 +235,6 @@ const CommunityDetail: NextPage = ({ initialInput, ...props }: T) => {
 		setSearchFilter({ ...searchFilter, page: value });
 	};
 
-	if (device === 'mobile') {
-		return <div>COMMUNITY DETAIL PAGE MOBILE</div>;
-	} else {
 		return (
 			<div id="community-detail-page">
 				<div className="container">
@@ -515,8 +512,7 @@ const CommunityDetail: NextPage = ({ initialInput, ...props }: T) => {
 				</div>
 			</div>
 		);
-	}
-};
+	};
 CommunityDetail.defaultProps = {
 	initialInput: {
 		page: 1,

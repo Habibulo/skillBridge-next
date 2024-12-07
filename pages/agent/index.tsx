@@ -126,9 +126,7 @@ const AgentList: NextPage = ({ initialInput, ...props }: any) => {
 			sweetMixinErrorAlert(err.message).then();
 		}
 	};
-	if (device === 'mobile') {
-		return <h1>AGENTS PAGE MOBILE</h1>;
-	} else {
+
 		return (
 			<Stack className={'agent-list-page'}>
 				<Stack className={'container'}>
@@ -208,8 +206,7 @@ const AgentList: NextPage = ({ initialInput, ...props }: any) => {
 				</Stack>
 			</Stack>
 		);
-	}
-};
+	};
 
 AgentList.defaultProps = {
 	initialInput: {

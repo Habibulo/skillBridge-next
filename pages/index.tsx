@@ -8,37 +8,24 @@ import Events from '../libs/components/homepage/Events';
 import TrendProperties from '../libs/components/homepage/TrendProperties';
 import TopProperties from '../libs/components/homepage/TopProperties';
 import { Stack } from '@mui/material';
-import Advertisement from '../libs/components/homepage/Advertisement';
+// import Advertisement from '../libs/components/homepage/Advertisement';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export const getStaticProps = async ({ locale }: any) => ({ props: { ...(await serverSideTranslations(locale, ['common'])), }, });
 
 const Home: NextPage = () => {
 	const device = useDeviceDetect();
-
-	if (device === 'mobile') {
 		return (
 			<Stack className={'home-page'}>
 				<TrendProperties />
 				<PopularProperties />
-				<Advertisement />
-				<TopProperties />
-				<TopAgents />
-			</Stack>
-		);
-	} else {
-		return (
-			<Stack className={'home-page'}>
-				<TrendProperties />
-				<PopularProperties />
-				<Advertisement />
+				{/* <Advertisement /> */}
 				<TopProperties />
 				<TopAgents />
 				<Events />
 				<CommunityBoards />
 			</Stack>
 		);
-	}
-};
+	};
 
 export default withLayoutMain(Home);

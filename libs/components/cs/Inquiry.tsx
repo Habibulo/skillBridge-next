@@ -7,12 +7,7 @@ const Inquiry = () => {
 	/** APOLLO REQUESTS **/
 	/** LIFECYCLES **/
 	/** HANDLERS **/
-
-	if (device === 'mobile') {
-		return <div>Inquiry MOBILE</div>;
-	} else {
-		return <div>Inquiry PC</div>;
+return <div>Inquiry PC</div>;
 	}
-};
 
 export default Inquiry;

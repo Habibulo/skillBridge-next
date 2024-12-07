@@ -62,9 +62,6 @@ const MyPage: NextPage = () => {
 		}
 	};
 
-	if (device === 'mobile') {
-		return <div>MY PAGE</div>;
-	} else {
 		return (
 			<div id="my-page" style={{ position: 'relative' }}>
 				<div className="container">
@@ -103,7 +100,6 @@ const MyPage: NextPage = () => {
 				</div>
 			</div>
 		);
-	}
-};
+	};
 
 export default withLayoutBasic(MyPage);

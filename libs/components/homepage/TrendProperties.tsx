@@ -61,40 +61,6 @@ const TrendProperties = (props: TrendPropertiesProps) => {
 	if (trendProperties) console.log('trendProperties:', trendProperties);
 	if (!trendProperties) return null;
 
-	if (device === 'mobile') {
-		return (
-			<Stack className={'trend-properties'}>
-				<Stack className={'container'}>
-					<Stack className={'info-box'}>
-						<span>Trend Properties</span>
-					</Stack>
-					<Stack className={'card-box'}>
-						{trendProperties.length === 0 ? (
-							<Box component={'div'} className={'empty-list'}>
-								Trends Empty
-							</Box>
-						) : (
-							<Swiper
-								className={'trend-property-swiper'}
-								slidesPerView={'auto'}
-								centeredSlides={true}
-								spaceBetween={15}
-								modules={[Autoplay]}
-							>
-								{trendProperties.map((property: Property) => {
-									return (
-										<SwiperSlide key={property._id} className={'trend-property-slide'}>
-											<TrendPropertyCard property={property} likePropertyHandler={likePropertyHandler} />
-										</SwiperSlide>
-									);
-								})}
-							</Swiper>
-						)}
-					</Stack>
-				</Stack>
-			</Stack>
-		);
-	} else {
 		return (
 			<Stack className={'trend-properties'}>
 				<Stack className={'container'}>
@@ -143,8 +109,7 @@ const TrendProperties = (props: TrendPropertiesProps) => {
 				</Stack>
 			</Stack>
 		);
-	}
-};
+	};
 
 TrendProperties.defaultProps = {
 	initialInput: {

@@ -68,9 +68,6 @@ const MyArticles: NextPage = ({ initialInput, ...props }: T) => {
 		}
 	};
 
-	if (device === 'mobile') {
-		return <>ARTICLE PAGE MOBILE</>;
-	} else
 		return (
 			<div id="my-articles-page">
 				<Stack className="main-title-box">

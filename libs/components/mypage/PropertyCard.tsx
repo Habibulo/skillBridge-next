@@ -50,9 +50,6 @@ export const PropertyCard = (props: PropertyCardProps) => {
 		setAnchorEl(null);
 	};
 
-	if (device === 'mobile') {
-		return <div>MOBILE PROPERTY CARD</div>;
-	} else
 		return (
 			<Stack className="property-card-box">
 				<Stack className="image-box" onClick={() => pushPropertyDetail(property?._id)}>

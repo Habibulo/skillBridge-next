@@ -56,34 +56,6 @@ const TopProperties = (props: TopPropertiesProps) => {
 			sweetMixinErrorAlert(err.message).then();
 		}
 	};
-	if (device === 'mobile') {
-		return (
-			<Stack className={'top-properties'}>
-				<Stack className={'container'}>
-					<Stack className={'info-box'}>
-						<span>Top properties</span>
-					</Stack>
-					<Stack className={'card-box'}>
-						<Swiper
-							className={'top-property-swiper'}
-							slidesPerView={'auto'}
-							centeredSlides={true}
-							spaceBetween={15}
-							modules={[Autoplay]}
-						>
-							{topProperties.map((property: Property) => {
-								return (
-									<SwiperSlide className={'top-property-slide'} key={property?._id}>
-										{/* <TopPropertyCard property={property} /> */}
-									</SwiperSlide>
-								);
-							})}
-						</Swiper>
-					</Stack>
-				</Stack>
-			</Stack>
-		);
-	} else {
 		return (
 			<Stack className={'top-properties'}>
 				<Stack className={'container'}>
@@ -126,8 +98,7 @@ const TopProperties = (props: TopPropertiesProps) => {
 				</Stack>
 			</Stack>
 		);
-	}
-};
+	};
 
 TopProperties.defaultProps = {
 	initialInput: {

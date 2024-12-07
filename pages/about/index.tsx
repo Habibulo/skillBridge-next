@@ -7,9 +7,6 @@ import { Stack, Box } from '@mui/material';
 const About: NextPage = () => {
 	const device = useDeviceDetect();
 
-	if (device === 'mobile') {
-		return <div>ABOUT PAGE MOBILE</div>;
-	} else {
 		return (
 			<Stack className={'about-page'}>
 				<Stack className={'intro'}>
@@ -148,7 +145,6 @@ const About: NextPage = () => {
 				</Stack>
 			</Stack>
 		);
-	}
-};
+	};
 
 export default withLayoutBasic(About);

@@ -22,11 +22,7 @@ const Notice = () => {
 			date: '31.03.2024',
 		},
 	];
-
-	if (device === 'mobile') {
-		return <div>NOTICE MOBILE</div>;
-	} else {
-		return (
+return (
 			<Stack className={'notice-content'}>
 				<span className={'title'}>Notice</span>
 				<Stack className={'main'}>
@@ -47,7 +43,6 @@ const Notice = () => {
 				</Stack>
 			</Stack>
 		);
-	}
-};
+	};
 
 export default Notice;

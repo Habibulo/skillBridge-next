@@ -23,9 +23,6 @@ const AgentCard = (props: AgentCardProps) => {
 		? `${REACT_APP_API_URL}/${agent?.memberImage}`
 		: '/img/profile/defaultUser.svg';
 
-	if (device === 'mobile') {
-		return <div>AGENT CARD</div>;
-	} else {
 		return (
 			<Stack className="agent-general-card">
 				<Link
@@ -78,6 +75,5 @@ const AgentCard = (props: AgentCardProps) => {
 			</Stack>
 		);
 	}
-};
 
 export default AgentCard;

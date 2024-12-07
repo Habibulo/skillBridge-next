@@ -27,9 +27,6 @@ const MyMenu = () => {
 		}
 	};
 
-	if (device === 'mobile') {
-		return <div>MY MENU</div>;
-	} else {
 		return (
 			<Stack width={'100%'} padding={'30px 24px'}>
 				<Stack className={'profile'}>
@@ -337,7 +334,6 @@ const MyMenu = () => {
 				</Stack>
 			</Stack>
 		);
-	}
-};
+	};
 
 export default MyMenu;

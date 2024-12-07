@@ -126,9 +126,6 @@ const PropertyList: NextPage = ({ initialInput, ...props }: any) => {
 		setAnchorEl(null);
 	};
 
-	if (device === 'mobile') {
-		return <h1>PROPERTIES MOBILE</h1>;
-	} else {
 		return (
 			<div id="property-list-page" style={{ position: 'relative' }}>
 				<div className="container">
@@ -210,8 +207,7 @@ const PropertyList: NextPage = ({ initialInput, ...props }: any) => {
 				</div>
 			</div>
 		);
-	}
-};
+	};
 
 PropertyList.defaultProps = {
 	initialInput: {

@@ -17,11 +17,7 @@ const CommunityCard = (props: CommunityCardProps) => {
 	const articleImage = article?.articleImage
 		? `${process.env.REACT_APP_API_URL}/${article?.articleImage}`
 		: '/img/event.svg';
-
-	if (device === 'mobile') {
-		return <div>COMMUNITY CARD (MOBILE)</div>;
-	} else {
-		if (vertical) {
+if (vertical) {
 			return (
 				<Link href={`/community/detail?articleCategory=${article?.articleCategory}&id=${article?._id}`}>
 					<Box component={'div'} className={'vertical-card'}>
@@ -50,7 +46,6 @@ const CommunityCard = (props: CommunityCardProps) => {
 				</>
 			);
 		}
-	}
-};
+	};
 
 export default CommunityCard;
