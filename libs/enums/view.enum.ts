@@ -1,5 +1,5 @@
 export enum ViewGroup {
 	MEMBER = 'MEMBER',
 	ARTICLE = 'ARTICLE',
-	PROPERTY = 'PROPERTY',
+	JOB_POST = 'JOB_POST',
 }

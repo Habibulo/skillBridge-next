@@ -7,8 +7,8 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import { propertySquare, propertyYears } from '../../config';
-import { PropertyLocation, PropertyType } from '../../enums/property.enum';
-import { PropertiesInquiry } from '../../types/property/property.input';
+import { PropertyLocation, PropertyType } from '../../enums/job.enum';
+import { PropertiesInquiry } from '../../types/job/job.input';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 
