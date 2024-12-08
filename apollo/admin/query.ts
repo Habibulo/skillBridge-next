@@ -17,15 +17,23 @@ export const GET_ALL_MEMBERS_BY_ADMIN = gql`
 				memberFullName
 				memberImage
 				memberAddress
-				memberDesc
-				memberWarnings
-				memberBlocks
-				memberProperties
-				memberRank
+				memberResume
+				memberSkills
+				memberJobs
+				memberCompany
+				memberFollowers
+				memberFollowings
+				memberJobListings
+				memberApplications
 				memberArticles
+				memberDesc
 				memberPoints
 				memberLikes
 				memberViews
+				memberComments
+				memberRank
+				memberWarnings
+				memberBlocks
 				deletedAt
 				createdAt
 				updatedAt
@@ -42,61 +50,41 @@ export const GET_ALL_MEMBERS_BY_ADMIN = gql`
  *        PROPERTY        *
  *************************/
 
-export const GET_ALL_PROPERTIES_BY_ADMIN = gql`
+export const GET_ALL_JOBS_BY_ADMIN = gql`
 	query GetAllPropertiesByAdmin($input: AllPropertiesInquiry!) {
-		getAllPropertiesByAdmin(input: $input) {
-			list {
-				_id
-				propertyType
-				propertyStatus
-				propertyLocation
-				propertyAddress
-				propertyTitle
-				propertyPrice
-				propertySquare
-				propertyBeds
-				propertyRooms
-				propertyViews
-				propertyLikes
-				propertyImages
-				propertyDesc
-				propertyBarter
-				propertyRent
-				memberId
-				soldAt
-				deletedAt
-				constructedAt
-				createdAt
-				updatedAt
-				memberData {
-					_id
-					memberType
-					memberStatus
-					memberAuthType
-					memberPhone
-					memberNick
-					memberFullName
-					memberImage
-					memberAddress
-					memberDesc
-					memberWarnings
-					memberBlocks
-					memberProperties
-					memberRank
-					memberPoints
-					memberLikes
-					memberViews
-					deletedAt
-					createdAt
-					updatedAt
-					accessToken
-				}
-			}
-			metaCounter {
-				total
-			}
-		}
-	}
+		query GetAllJobsByAdmin ($input: AllJobsInquiry!){
+    getAllJobsByAdmin(input: $input) {
+        list {
+            _id
+            jobEmploymentMode
+            jobIndustry
+            jobLocation
+            jobStatus
+            jobAddress
+            jobTitle
+            jobSalary
+            jobDescription
+            jobExperienceRequired
+            jobPositionsAvailable
+            jobRemoteAvailable
+            jobNegotiableSalary
+            jobImages
+            jobViews
+            jobLikes
+            jobComments
+            jobRank
+            memberId
+            closedAt
+            deletedAt
+            postedAt
+            createdAt
+            updatedAt
+        }
+        metaCounter {
+            total
+        }
+    }
+}
 `;
 
 /**************************
@@ -131,7 +119,7 @@ export const GET_ALL_BOARD_ARTICLES_BY_ADMIN = gql`
 					memberDesc
 					memberWarnings
 					memberBlocks
-					memberProperties
+					memberJobs
 					memberRank
 					memberPoints
 					memberLikes

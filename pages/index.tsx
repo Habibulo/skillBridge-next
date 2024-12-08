@@ -19,7 +19,6 @@ const Home: NextPage = () => {
 			<Stack className={'home-page'}>
 				<TrendProperties />
 				<PopularProperties />
-				{/* <Advertisement /> */}
 				<TopProperties />
 				<TopAgents />
 				<Events />

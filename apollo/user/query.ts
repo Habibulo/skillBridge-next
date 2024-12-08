@@ -17,23 +17,27 @@ export const GET_AGENTS = gql`
 				memberFullName
 				memberImage
 				memberAddress
+				memberResume
+				memberSkills
+				memberJobs
+				memberCompany
+				memberFollowers
+				memberFollowings
+				memberJobListings
+				memberApplications
+				memberArticles
 				memberDesc
-				memberWarnings
-				memberBlocks
-				memberProperties
-				memberRank
 				memberPoints
 				memberLikes
 				memberViews
+				memberComments
+				memberRank
+				memberWarnings
+				memberBlocks
 				deletedAt
 				createdAt
 				updatedAt
 				accessToken
-				meLiked {
-					memberId
-					likeRefId
-					myFavorite
-				}
 			}
 			metaCounter {
 				total
@@ -43,7 +47,7 @@ export const GET_AGENTS = gql`
 `;
 
 export const GET_MEMBER = gql(`
-query GetMember($input: String!) {
+	query GetMember($input: String!) {
     getMember(memberId: $input) {
         _id
         memberType
@@ -54,14 +58,20 @@ query GetMember($input: String!) {
         memberFullName
         memberImage
         memberAddress
-        memberDesc
-        memberProperties
+        memberResume
+        memberSkills
+        memberJobs
+        memberCompany
+        memberFollowers
+        memberFollowings
+        memberJobListings
+        memberApplications
         memberArticles
+        memberDesc
         memberPoints
         memberLikes
         memberViews
-        memberFollowings
-				memberFollowers
+        memberComments
         memberRank
         memberWarnings
         memberBlocks
@@ -69,11 +79,16 @@ query GetMember($input: String!) {
         createdAt
         updatedAt
         accessToken
+        meLiked {
+            memberId
+            likeRefId
+            myFavorite
+        }
         meFollowed {
-					followingId
-					followerId
-					myFollowing
-				}
+            followingId
+            followerId
+            myFollowing
+        }
     }
 }
 `);
@@ -82,29 +97,31 @@ query GetMember($input: String!) {
  *        PROPERTY        *
  *************************/
 
-export const GET_PROPERTY = gql`
-	query GetProperty($input: String!) {
-		getProperty(propertyId: $input) {
+export const GET_JOB = gql`
+	query GetJob($input: String!) {
+		getJob(jobId: $input) {
 			_id
-			propertyType
-			propertyStatus
-			propertyLocation
-			propertyAddress
-			propertyTitle
-			propertyPrice
-			propertySquare
-			propertyBeds
-			propertyRooms
-			propertyViews
-			propertyLikes
-			propertyImages
-			propertyDesc
-			propertyBarter
-			propertyRent
+			jobEmploymentMode
+			jobIndustry
+			jobLocation
+			jobStatus
+			jobAddress
+			jobTitle
+			jobSalary
+			jobDescription
+			jobExperienceRequired
+			jobPositionsAvailable
+			jobRemoteAvailable
+			jobNegotiableSalary
+			jobImages
+			jobViews
+			jobLikes
+			jobComments
+			jobRank
 			memberId
-			soldAt
+			closedAt
 			deletedAt
-			constructedAt
+			postedAt
 			createdAt
 			updatedAt
 			memberData {
@@ -117,12 +134,23 @@ export const GET_PROPERTY = gql`
 				memberFullName
 				memberImage
 				memberAddress
+				memberResume
+				memberSkills
+				memberJobs
+				memberCompany
+				memberFollowers
+				memberFollowings
+				memberJobListings
+				memberApplications
+				memberArticles
 				memberDesc
-				memberWarnings
-				memberBlocks
 				memberPoints
 				memberLikes
 				memberViews
+				memberComments
+				memberRank
+				memberWarnings
+				memberBlocks
 				deletedAt
 				createdAt
 				updatedAt
@@ -137,92 +165,106 @@ export const GET_PROPERTY = gql`
 	}
 `;
 
-export const GET_PROPERTIES = gql`
-	query GetProperties($input: PropertiesInquiry!) {
-		getProperties(input: $input) {
-			list {
-				_id
-				propertyType
-				propertyStatus
-				propertyLocation
-				propertyAddress
-				propertyTitle
-				propertyPrice
-				propertySquare
-				propertyBeds
-				propertyRooms
-				propertyViews
-				propertyLikes
-				propertyRank
-				propertyImages
-				propertyDesc
-				propertyBarter
-				propertyRent
-				memberId
-				soldAt
-				deletedAt
-				constructedAt
-				createdAt
-				updatedAt
-				memberData {
-					_id
-					memberType
-					memberStatus
-					memberAuthType
-					memberPhone
-					memberNick
-					memberFullName
-					memberImage
-					memberAddress
-					memberDesc
-					memberWarnings
-					memberBlocks
-					memberProperties
-					memberRank
-					memberPoints
-					memberLikes
-					memberViews
-					deletedAt
-					createdAt
-					updatedAt
-				}
+export const GET_JOBS = gql`
+	query GetJobs ($input: JobsInquiry!){
+    getJobs(input: $input) {
+        list {
+            _id
+            jobEmploymentMode
+            jobIndustry
+            jobLocation
+            jobStatus
+            jobAddress
+            jobTitle
+            jobSalary
+            jobDescription
+            jobExperienceRequired
+            jobPositionsAvailable
+            jobRemoteAvailable
+            jobNegotiableSalary
+            jobImages
+            jobViews
+            jobLikes
+            jobComments
+            jobRank
+            memberId
+            closedAt
+            deletedAt
+            postedAt
+            createdAt
+            updatedAt
+        }
+         memberData {
+            _id
+            memberType
+            memberStatus
+            memberAuthType
+            memberPhone
+            memberNick
+            memberFullName
+            memberImage
+            memberAddress
+            memberResume
+            memberSkills
+            memberJobs
+            memberCompany
+            memberFollowers
+            memberFollowings
+            memberJobListings
+            memberApplications
+            memberArticles
+            memberDesc
+            memberPoints
+            memberLikes
+            memberViews
+            memberComments
+            memberRank
+            memberWarnings
+            memberBlocks
+            deletedAt
+            createdAt
+            updatedAt
+            accessToken
+        }
 				meLiked {
 					memberId
 					likeRefId
 					myFavorite
 				}
 			}
-			metaCounter {
-				total
-			}
-		}
-	}
+        metaCounter {
+            total
+        }
+    }
+}
 `;
 
-export const GET_AGENT_PROPERTIES = gql`
-	query GetAgentProperties($input: AgentPropertiesInquiry!) {
-		getAgentProperties(input: $input) {
+export const GET_AGENT_JOBS = gql`
+	query GetAgentJobs($input: AgentJobsInquiry!) {
+		getAgentJobs(input: $input) {
 			list {
 				_id
-				propertyType
-				propertyStatus
-				propertyLocation
-				propertyAddress
-				propertyTitle
-				propertyPrice
-				propertySquare
-				propertyBeds
-				propertyRooms
-				propertyViews
-				propertyLikes
-				propertyImages
-				propertyDesc
-				propertyBarter
-				propertyRent
+				jobEmploymentMode
+				jobIndustry
+				jobLocation
+				jobStatus
+				jobAddress
+				jobTitle
+				jobSalary
+				jobDescription
+				jobExperienceRequired
+				jobPositionsAvailable
+				jobRemoteAvailable
+				jobNegotiableSalary
+				jobImages
+				jobViews
+				jobLikes
+				jobComments
+				jobRank
 				memberId
-				soldAt
+				closedAt
 				deletedAt
-				constructedAt
+				postedAt
 				createdAt
 				updatedAt
 			}
@@ -237,57 +279,63 @@ export const GET_FAVORITES = gql`
 	query GetFavorites($input: OrdinaryInquiry!) {
 		getFavorites(input: $input) {
 			list {
-				_id
-				propertyType
-				propertyStatus
-				propertyLocation
-				propertyAddress
-				propertyTitle
-				propertyPrice
-				propertySquare
-				propertyBeds
-				propertyRooms
-				propertyViews
-				propertyLikes
-				propertyComments
-				propertyRank
-				propertyImages
-				propertyDesc
-				propertyBarter
-				propertyRent
-				memberId
-				soldAt
-				deletedAt
-				constructedAt
-				createdAt
-				updatedAt
-				memberData {
-					_id
-					memberType
-					memberStatus
-					memberAuthType
-					memberPhone
-					memberNick
-					memberFullName
-					memberImage
-					memberAddress
-					memberDesc
-					memberProperties
-					memberArticles
-					memberPoints
-					memberLikes
-					memberViews
-					memberComments
-					memberFollowings
-					memberFollowers
-					memberRank
-					memberWarnings
-					memberBlocks
-					deletedAt
-					createdAt
-					updatedAt
-					accessToken
-				}
+            _id
+            jobEmploymentMode
+            jobIndustry
+            jobLocation
+            jobStatus
+            jobAddress
+            jobTitle
+            jobSalary
+            jobDescription
+            jobExperienceRequired
+            jobPositionsAvailable
+            jobRemoteAvailable
+            jobNegotiableSalary
+            jobImages
+            jobViews
+            jobLikes
+            jobComments
+            jobRank
+            memberId
+            closedAt
+            deletedAt
+            postedAt
+            createdAt
+            updatedAt
+        }
+				 memberData {
+            _id
+            memberType
+            memberStatus
+            memberAuthType
+            memberPhone
+            memberNick
+            memberFullName
+            memberImage
+            memberAddress
+            memberResume
+            memberSkills
+            memberJobs
+            memberCompany
+            memberFollowers
+            memberFollowings
+            memberJobListings
+            memberApplications
+            memberArticles
+            memberDesc
+            memberPoints
+            memberLikes
+            memberViews
+            memberComments
+            memberRank
+            memberWarnings
+            memberBlocks
+            deletedAt
+            createdAt
+            updatedAt
+            accessToken
+        }
 			}
 			metaCounter {
 				total
@@ -300,57 +348,63 @@ export const GET_VISITED = gql`
 	query GetVisited($input: OrdinaryInquiry!) {
 		getVisited(input: $input) {
 			list {
-				_id
-				propertyType
-				propertyStatus
-				propertyLocation
-				propertyAddress
-				propertyTitle
-				propertyPrice
-				propertySquare
-				propertyBeds
-				propertyRooms
-				propertyViews
-				propertyLikes
-				propertyComments
-				propertyRank
-				propertyImages
-				propertyDesc
-				propertyBarter
-				propertyRent
-				memberId
-				soldAt
-				deletedAt
-				constructedAt
-				createdAt
-				updatedAt
+            _id
+            jobEmploymentMode
+            jobIndustry
+            jobLocation
+            jobStatus
+            jobAddress
+            jobTitle
+            jobSalary
+            jobDescription
+            jobExperienceRequired
+            jobPositionsAvailable
+            jobRemoteAvailable
+            jobNegotiableSalary
+            jobImages
+            jobViews
+            jobLikes
+            jobComments
+            jobRank
+            memberId
+            closedAt
+            deletedAt
+            postedAt
+            createdAt
+            updatedAt
+        }
 				memberData {
-					_id
-					memberType
-					memberStatus
-					memberAuthType
-					memberPhone
-					memberNick
-					memberFullName
-					memberImage
-					memberAddress
-					memberDesc
-					memberProperties
-					memberArticles
-					memberPoints
-					memberLikes
-					memberViews
-					memberComments
-					memberFollowings
-					memberFollowers
-					memberRank
-					memberWarnings
-					memberBlocks
-					deletedAt
-					createdAt
-					updatedAt
-					accessToken
-				}
+            _id
+            memberType
+            memberStatus
+            memberAuthType
+            memberPhone
+            memberNick
+            memberFullName
+            memberImage
+            memberAddress
+            memberResume
+            memberSkills
+            memberJobs
+            memberCompany
+            memberFollowers
+            memberFollowings
+            memberJobListings
+            memberApplications
+            memberArticles
+            memberDesc
+            memberPoints
+            memberLikes
+            memberViews
+            memberComments
+            memberRank
+            memberWarnings
+            memberBlocks
+            deletedAt
+            createdAt
+            updatedAt
+            accessToken
+        }
 			}
 			metaCounter {
 				total
@@ -388,17 +442,27 @@ export const GET_BOARD_ARTICLE = gql`
 				memberFullName
 				memberImage
 				memberAddress
+				memberResume
+				memberSkills
+				memberJobs
+				memberCompany
+				memberFollowers
+				memberFollowings
+				memberJobListings
+				memberApplications
+				memberArticles
 				memberDesc
-				memberWarnings
-				memberBlocks
-				memberProperties
-				memberRank
 				memberPoints
 				memberLikes
 				memberViews
+				memberComments
+				memberRank
+				memberWarnings
+				memberBlocks
 				deletedAt
 				createdAt
 				updatedAt
+				accessToken
 			}
 			meLiked {
 				memberId
@@ -425,33 +489,38 @@ export const GET_BOARD_ARTICLES = gql`
 				memberId
 				createdAt
 				updatedAt
-				meLiked {
-					memberId
-					likeRefId
-					myFavorite
-				}
-				memberData {
-					_id
-					memberType
-					memberStatus
-					memberAuthType
-					memberPhone
-					memberNick
-					memberFullName
-					memberImage
-					memberAddress
-					memberDesc
-					memberWarnings
-					memberBlocks
-					memberProperties
-					memberRank
-					memberPoints
-					memberLikes
-					memberViews
-					deletedAt
-					createdAt
-					updatedAt
-				}
+			}
+			memberData {
+				_id
+				memberType
+				memberStatus
+				memberAuthType
+				memberPhone
+				memberNick
+				memberFullName
+				memberImage
+				memberAddress
+				memberResume
+				memberSkills
+				memberJobs
+				memberCompany
+				memberFollowers
+				memberFollowings
+				memberJobListings
+				memberApplications
+				memberArticles
+				memberDesc
+				memberPoints
+				memberLikes
+				memberViews
+				memberComments
+				memberRank
+				memberWarnings
+				memberBlocks
+				deletedAt
+				createdAt
+				updatedAt
+				accessToken
 			}
 			metaCounter {
 				total
@@ -486,14 +555,23 @@ export const GET_COMMENTS = gql`
 					memberFullName
 					memberImage
 					memberAddress
+					memberResume
+					memberSkills
+					memberJobs
+					memberCompany
+					memberFollowers
+					memberFollowings
+					memberJobListings
+					memberApplications
+					memberArticles
 					memberDesc
-					memberWarnings
-					memberBlocks
-					memberProperties
-					memberRank
 					memberPoints
 					memberLikes
 					memberViews
+					memberComments
+					memberRank
+					memberWarnings
+					memberBlocks
 					deletedAt
 					createdAt
 					updatedAt
@@ -539,15 +617,20 @@ export const GET_MEMBER_FOLLOWERS = gql`
 					memberFullName
 					memberImage
 					memberAddress
-					memberDesc
-					memberProperties
+					memberResume
+					memberSkills
+					memberJobs
+					memberCompany
+					memberFollowers
+					memberFollowings
+					memberJobListings
+					memberApplications
 					memberArticles
+					memberDesc
 					memberPoints
 					memberLikes
 					memberViews
 					memberComments
-					memberFollowings
-					memberFollowers
 					memberRank
 					memberWarnings
 					memberBlocks
@@ -582,15 +665,20 @@ export const GET_MEMBER_FOLLOWINGS = gql`
 					memberFullName
 					memberImage
 					memberAddress
-					memberDesc
-					memberProperties
+					memberResume
+					memberSkills
+					memberJobs
+					memberCompany
+					memberFollowers
+					memberFollowings
+					memberJobListings
+					memberApplications
 					memberArticles
+					memberDesc
 					memberPoints
 					memberLikes
 					memberViews
 					memberComments
-					memberFollowings
-					memberFollowers
 					memberRank
 					memberWarnings
 					memberBlocks

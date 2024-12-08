@@ -16,13 +16,21 @@ export const UPDATE_MEMBER_BY_ADMIN = gql`
 			memberFullName
 			memberImage
 			memberAddress
-			memberDesc
-			memberProperties
-			memberRank
+			memberResume
+			memberSkills
+			memberJobs
+			memberCompany
+			memberFollowers
+			memberFollowings
+			memberJobListings
+			memberApplications
 			memberArticles
+			memberDesc
 			memberPoints
 			memberLikes
 			memberViews
+			memberComments
+			memberRank
 			memberWarnings
 			memberBlocks
 			deletedAt
@@ -37,58 +45,62 @@ export const UPDATE_MEMBER_BY_ADMIN = gql`
  *        PROPERTY        *
  *************************/
 
-export const UPDATE_PROPERTY_BY_ADMIN = gql`
-	mutation UpdatePropertyByAdmin($input: PropertyUpdate!) {
-		updatePropertyByAdmin(input: $input) {
+export const UPDATE_JOB_BY_ADMIN = gql`
+	mutation UpdateJob($input: JobUpdate!) {
+		updateJob(input: $input) {
 			_id
-			propertyType
-			propertyStatus
-			propertyLocation
-			propertyAddress
-			propertyTitle
-			propertyPrice
-			propertySquare
-			propertyBeds
-			propertyRooms
-			propertyViews
-			propertyLikes
-			propertyImages
-			propertyDesc
-			propertyBarter
-			propertyRent
+			jobEmploymentMode
+			jobIndustry
+			jobLocation
+			jobStatus
+			jobAddress
+			jobTitle
+			jobSalary
+			jobDescription
+			jobExperienceRequired
+			jobPositionsAvailable
+			jobRemoteAvailable
+			jobNegotiableSalary
+			jobImages
+			jobViews
+			jobLikes
+			jobComments
+			jobRank
 			memberId
-			soldAt
+			closedAt
 			deletedAt
-			constructedAt
+			postedAt
 			createdAt
 			updatedAt
 		}
 	}
 `;
 
-export const REMOVE_PROPERTY_BY_ADMIN = gql`
-	mutation RemovePropertyByAdmin($input: String!) {
-		removePropertyByAdmin(propertyId: $input) {
+export const REMOVE_JOB_BY_ADMIN = gql`
+	mutation RemoveJobByAdmin($input: String!) {
+		removeJobByAdmin(jobId: $input) {
 			_id
-			propertyType
-			propertyStatus
-			propertyLocation
-			propertyAddress
-			propertyTitle
-			propertyPrice
-			propertySquare
-			propertyBeds
-			propertyRooms
-			propertyViews
-			propertyLikes
-			propertyImages
-			propertyDesc
-			propertyBarter
-			propertyRent
+			jobEmploymentMode
+			jobIndustry
+			jobLocation
+			jobStatus
+			jobAddress
+			jobTitle
+			jobSalary
+			jobDescription
+			jobExperienceRequired
+			jobPositionsAvailable
+			jobRemoteAvailable
+			jobNegotiableSalary
+			jobImages
+			jobViews
+			jobLikes
+			jobComments
+			jobRank
 			memberId
-			soldAt
+			closedAt
 			deletedAt
-			constructedAt
+			postedAt
 			createdAt
 			updatedAt
 		}
