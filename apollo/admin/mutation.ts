@@ -42,7 +42,7 @@ export const UPDATE_MEMBER_BY_ADMIN = gql`
 `;
 
 /**************************
- *        PROPERTY        *
+ *        JOB      *
  *************************/
 
 export const UPDATE_JOB_BY_ADMIN = gql`

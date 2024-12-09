@@ -153,7 +153,7 @@ export const LIKE_TARGET_MEMBER = gql`
 `;
 
 /**************************
- *        PROPERTY        *
+ *        JOB        *
  *************************/
 
 export const CREATE_JOB = gql`

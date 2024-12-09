@@ -94,7 +94,7 @@ export const GET_MEMBER = gql(`
 `);
 
 /**************************
- *        PROPERTY        *
+ *        JOB        *
  *************************/
 
 export const GET_JOB = gql`
@@ -168,75 +168,37 @@ export const GET_JOB = gql`
 export const GET_JOBS = gql`
 	query GetJobs ($input: JobsInquiry!){
     getJobs(input: $input) {
-        list {
-            _id
-            jobEmploymentMode
-            jobIndustry
-            jobLocation
-            jobStatus
-            jobAddress
-            jobTitle
-            jobSalary
-            jobDescription
-            jobExperienceRequired
-            jobPositionsAvailable
-            jobRemoteAvailable
-            jobNegotiableSalary
-            jobImages
-            jobViews
-            jobLikes
-            jobComments
-            jobRank
-            memberId
-            closedAt
-            deletedAt
-            postedAt
-            createdAt
-            updatedAt
-        }
-         memberData {
-            _id
-            memberType
-            memberStatus
-            memberAuthType
-            memberPhone
-            memberNick
-            memberFullName
-            memberImage
-            memberAddress
-            memberResume
-            memberSkills
-            memberJobs
-            memberCompany
-            memberFollowers
-            memberFollowings
-            memberJobListings
-            memberApplications
-            memberArticles
-            memberDesc
-            memberPoints
-            memberLikes
-            memberViews
-            memberComments
-            memberRank
-            memberWarnings
-            memberBlocks
-            deletedAt
-            createdAt
-            updatedAt
-            accessToken
-        }
-				meLiked {
+			list {
+					_id
+					jobEmploymentMode
+					jobIndustry
+					jobLocation
+					jobStatus
+					jobAddress
+					jobTitle
+					jobSalary
+					jobDescription
+					jobExperienceRequired
+					jobPositionsAvailable
+					jobRemoteAvailable
+					jobNegotiableSalary
+					jobImages
+					jobViews
+					jobLikes
+					jobComments
+					jobRank
 					memberId
-					likeRefId
-					myFavorite
-				}
+					closedAt
+					deletedAt
+					postedAt
+					createdAt
+					updatedAt
 			}
-        metaCounter {
-            total
-        }
-    }
-}
+		}
+			metaCounter {
+        total
+      }
+  }
 `;
 
 export const GET_AGENT_JOBS = gql`
@@ -304,39 +266,6 @@ export const GET_FAVORITES = gql`
             createdAt
             updatedAt
         }
-				 memberData {
-            _id
-            memberType
-            memberStatus
-            memberAuthType
-            memberPhone
-            memberNick
-            memberFullName
-            memberImage
-            memberAddress
-            memberResume
-            memberSkills
-            memberJobs
-            memberCompany
-            memberFollowers
-            memberFollowings
-            memberJobListings
-            memberApplications
-            memberArticles
-            memberDesc
-            memberPoints
-            memberLikes
-            memberViews
-            memberComments
-            memberRank
-            memberWarnings
-            memberBlocks
-            deletedAt
-            createdAt
-            updatedAt
-            accessToken
-        }
-			}
 			metaCounter {
 				total
 			}
@@ -373,44 +302,11 @@ export const GET_VISITED = gql`
             createdAt
             updatedAt
         }
-				memberData {
-            _id
-            memberType
-            memberStatus
-            memberAuthType
-            memberPhone
-            memberNick
-            memberFullName
-            memberImage
-            memberAddress
-            memberResume
-            memberSkills
-            memberJobs
-            memberCompany
-            memberFollowers
-            memberFollowings
-            memberJobListings
-            memberApplications
-            memberArticles
-            memberDesc
-            memberPoints
-            memberLikes
-            memberViews
-            memberComments
-            memberRank
-            memberWarnings
-            memberBlocks
-            deletedAt
-            createdAt
-            updatedAt
-            accessToken
-        }
 			}
 			metaCounter {
 				total
 			}
 		}
-	}
 `;
 
 /**************************

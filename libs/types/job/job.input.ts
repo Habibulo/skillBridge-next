@@ -13,6 +13,7 @@ export interface jobInput {
 	jobPositionsAvailable: number;
 	jobRemoteAvailable: boolean;
 	jobNegotiableSalary: boolean;
+	jobRank: number;
 	jobImages: string[];
 	memberId?: string;
 	postedAt?: Date;
@@ -27,7 +28,7 @@ interface JobSearch {
 	options?: string[];
 	salaryRange?: SalaryRange;
 	periodsRange?: PeriodsRange;
-	experienceRange?: ExperienceRange;
+	experienceRange?: Number[];
 	text?: string;
 }
 

@@ -108,7 +108,7 @@ const Top = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/property' },
+    { name: 'Browse Jobs', href: '/job' },
     { name: 'Contact', href: '#' }
   ];
 
